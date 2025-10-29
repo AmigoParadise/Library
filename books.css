@@ -1,0 +1,261 @@
+/* CSS Variables for theme consistency */
+:root {
+  --color-primary: #4f46e5; /* Indigo 600 */
+  --color-primary-dark: #4338ca; /* Indigo 700 */
+  --color-white: #ffffff;
+  --color-gray-bg: #f5f5f5; /* Lighter Gray BG */
+  --color-text: #333333; /* Darker Text */
+  --color-success-light: #e6ffee; /* Very Light Green */
+  --color-success-dark: #008000; /* Dark Green */
+  --color-error-light: #ffeeee; /* Very Light Red */
+  --color-error-dark: #cc0000; /* Dark Red */
+}
+
+/* Base Styles - Simpler Look */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-gray-bg);
+  min-height: 100vh;
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+/* Header Styling */
+.header {
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+/* Main Layout */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Library Grid (Responsive using CSS Grid) */
+.library-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Card Styling - Flat and Simple */
+.book-card {
+  background-color: var(--color-white);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.2s ease;
+}
+
+.book-card:hover {
+  border-color: var(--color-primary);
+}
+
+.book-card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.book-card p:first-of-type {
+  color: var(--color-primary);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.book-card p:nth-of-type(2) {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.book-card-actions {
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Button Base Styles - Flatter */
+.btn-base {
+  border: 1px solid transparent;
+  cursor: pointer;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  border-radius: 0.3rem;
+  transition: background-color 0.15s ease;
+}
+
+/* Dynamic Read Status Styles */
+.read-true {
+  background-color: var(--color-success-light);
+  color: var(--color-success-dark);
+  border-color: var(--color-success-dark);
+}
+.read-true:hover {
+  background-color: #d9ffe6;
+}
+
+.read-false {
+  background-color: var(--color-error-light);
+  color: var(--color-error-dark);
+  border-color: var(--color-error-dark);
+}
+.read-false:hover {
+  background-color: #ffd9d9;
+}
+
+/* Remove Button Style */
+.remove-btn {
+  background-color: #888;
+  color: var(--color-white);
+  border-color: #888;
+}
+
+.remove-btn:hover {
+  background-color: #666;
+  border-color: #666;
+}
+
+/* Header Button Style */
+.btn-header {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.btn-header:hover {
+  background-color: #f0f0ff;
+}
+
+/* Dialog Button Styles */
+.btn-form-submit {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  font-weight: 500;
+}
+.btn-form-submit:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Form Cancel Button Style */
+.btn-form-cancel {
+  background-color: #e0e0e0;
+  color: #444;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  font-weight: 500;
+}
+.btn-form-cancel:hover {
+  background-color: #ccc;
+}
+
+/* Dialog/Modal Styling */
+dialog {
+  padding: 0;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  width: 90%;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dialog-content {
+  background-color: var(--color-white);
+  padding: 1.5rem;
+}
+
+.dialog-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 0.75rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 0.2rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  transition: border-color 0.15s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.checkbox-group {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+  height: 1rem;
+  width: 1rem;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+.checkbox-group label {
+  margin-left: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
